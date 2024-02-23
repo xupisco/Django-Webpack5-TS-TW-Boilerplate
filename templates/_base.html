@@ -1,0 +1,25 @@
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="cupcake">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="description" content="TODO" />
+    <meta name="author" content="TODO" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <title>{% block page_title %}{% endblock %}</title>
+</head>
+<body>
+
+{% include 'includes/navbar.html' with title=title %}
+{% block content %}{% endblock content %}
+{% include 'includes/footer.html' %}
+
+{% render_bundle 'main' 'js' %}
+</body>
+</html>
